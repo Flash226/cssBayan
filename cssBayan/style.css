@@ -8,26 +8,28 @@ html {
 
 body {
   background-color: #42444d;
-  font-size: 1em;
+  font-size: 0.8rem;
 }
 
 .wrap {
-  max-width: 60vw;
+  max-width: 90vw;
   margin: 0 auto;
   background-color: #cec8c8;
   padding: 1rem;
 }
 
 .title {
+  font-size: 1rem;
   text-align: center;
-  font-size: 2rem;
   margin: 1rem 0;
+  color: #333333;
+  text-shadow: 0.2rem 0.2rem 0.5rem #858484;
 }
 
 .container {
-  cursor: pointer;
   background-color: #eee;
   padding: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem #333333;
 }
 
 .container,
@@ -39,70 +41,125 @@ body {
 .bayan-header {
   display: flex;
   justify-content: space-between;
-  font-size: 2rem;
-  background-color: #05869d;
-  color: #82adb4;
+  background-image: linear-gradient(0deg, #05869d 0%, #3dc9e2 100%);
+  color: #eee;
+  text-shadow: 0.1rem 0.1rem 0.1rem #222;
   padding: 1rem;
+}
+
+.bayan-header span {
   transition: all .5s ease;
 }
 
 .bayan-indicator {
-  font-size: 2rem;
   font-weight: 900;
   transform: rotate(-270deg);
   opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.container:hover .bayan-indicator {
-  opacity: 1;
-}
-
-.container:hover .bayan-header {
-  color: #eee;
 }
 
 .bayan-item input[type="radio"] {
-  opacity: 0;
+  display: none;
   pointer-events: none;
 }
 
-.bayan-item:active .bayan-header {
-  color: #42444d;
+.bayan-item:active .bayan-header span {
+  color: #a4a4a4;
 }
 
 .bayan-item:active .bayan-content {
-  background-color: #42444d;
-  transition: all 0.5s ease;
+  opacity: 0.7;
+  background-color: #676768;
 }
-
-.bayan-item input[type="radio"] {
-  opacity: 0;
-  pointer-events: none;
-}
-
 
 .bayan-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all .5s ease;
 }
 
 img {
   width: 0%;
   height: auto;
-  transition: all 0.5s ease;
+  margin: 0;
+  transition: all .5s ease;
 }
 
-.bayan-item input[type="radio"]:checked ~ .bayan-content img,
-.bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-content img {
+.bayan-item input[type="radio"]:checked ~ .bayan-content img {
   width: 80%;
   margin: 1rem 0;
-  transition: all 0.5s ease;
 }
 
-.bayan-item input[type="radio"]:checked ~ .bayan-header .bayan-indicator,
-.bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-header .bayan-indicator {
+.bayan-item input[type="radio"]:checked ~ .bayan-header .bayan-indicator {
   transform: rotate(225deg);
-  transition: all 0.5s ease;
+}
+
+.bayan-item input[type="radio"]:checked ~ .bayan-header {
+  color: #2a2a2a;
+  text-shadow: none;
+}
+
+hr {
+  margin: 0;
+  background-color: brown;
+  height: 0.1rem;
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .wrap {
+    max-width: 70vw;
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    max-width: 60vw;
+  }
+
+  body {
+    font-size: 1.8rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (hover: hover) {
+  .container:hover .bayan-indicator {
+    opacity: 1;
+  }
+  
+  .container:hover .bayan-header {
+    color: #2a2a2a;
+    text-shadow: none;
+  }
+
+  .bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-header .bayan-indicator {
+    transform: rotate(225deg);
+  }
+
+  .bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-content img {
+  width: 80%;
+  margin: 1rem 0;
+  }
+}
+
+@media (hover: none) {
+  .bayan-header {
+    color: #2a2a2a;
+  }
+
+  .bayan-indicator {
+    opacity: 1;
+  }
 }
