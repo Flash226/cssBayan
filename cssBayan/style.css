@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5e9e9;
+}
+
+.wrap {
+  max-width: 60vw;
+  margin: 0 auto;
+  background-color: #cec8c8;
+  padding: 2rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.container {
+  cursor: pointer;
+  background-color: #eee;
+  padding: 1rem;
+}
+
+.bayan-header {
+  font-size: 2rem;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.bayan-indicator {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+.bayan-item {
+  position: relative;
+}
+
+.bayan-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.bayan-item input[type="radio"]:checked ~ .bayan-header {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.bayan-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.bayan-item input[type="radio"]:checked ~ .bayan-content,
+.bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-content {
+  display: block;
+}
+
+.bayan-content {
+  text-align: center;
+  display: none;
+  padding: 1rem;
+  transition: all .5s ease;
+}
+
+img {
+  width: 80%;
+  height: auto;
+}
