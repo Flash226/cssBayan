@@ -86,7 +86,7 @@ img {
 }
 
 .bayan-item input[type="radio"]:checked ~ .bayan-content img {
-  width: 80%;
+  width: 60%;
   margin: 1rem 0;
 }
 
@@ -157,7 +157,7 @@ hr {
   }
 
   .bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-content img {
-  width: 80%;
+  width: 60%;
   margin: 1rem 0;
   }
 }
