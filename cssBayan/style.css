@@ -108,7 +108,7 @@ hr {
 /* Media Queries */
 @media (min-width: 640px) {
   .wrap {
-    max-width: 70vw;
+    max-width: 75vw;
   }
 
   body {
@@ -126,7 +126,7 @@ hr {
 
 @media (min-width: 1024px) {
   .wrap {
-    max-width: 60vw;
+    max-width: 70vw;
   }
 
   body {
