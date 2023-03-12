@@ -7,20 +7,21 @@ html {
 }
 
 body {
-  background-color: #f5e9e9;
+  background-color: #42444d;
+  font-size: 1em;
 }
 
 .wrap {
   max-width: 60vw;
   margin: 0 auto;
   background-color: #cec8c8;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .title {
   text-align: center;
   font-size: 2rem;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 .container {
@@ -29,55 +30,79 @@ body {
   padding: 1rem;
 }
 
+.container,
+.bayan-header,
+.bayan-content {
+  cursor: pointer;
+}
+
 .bayan-header {
-  font-size: 2rem;
-  background-color: antiquewhite;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-}
-
-.bayan-indicator {
-  font-size: 2.2rem;
-  font-weight: 900;
-}
-
-.bayan-item {
-  position: relative;
-}
-
-.bayan-item input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-.bayan-item input[type="radio"]:checked ~ .bayan-header {
-  background-color: #4CAF50;
-  color: #fff;
-}
-
-.bayan-item input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.5s ease;
-}
-
-.bayan-item input[type="radio"]:checked ~ .bayan-content,
-.bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-content {
-  display: block;
-}
-
-.bayan-content {
-  text-align: center;
-  display: none;
+  font-size: 2rem;
+  background-color: #05869d;
+  color: #82adb4;
   padding: 1rem;
   transition: all .5s ease;
 }
 
+.bayan-indicator {
+  font-size: 2rem;
+  font-weight: 900;
+  transform: rotate(-270deg);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.container:hover .bayan-indicator {
+  opacity: 1;
+}
+
+.container:hover .bayan-header {
+  color: #eee;
+}
+
+.bayan-item input[type="radio"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bayan-item:active .bayan-header {
+  color: #42444d;
+}
+
+.bayan-item:active .bayan-content {
+  background-color: #42444d;
+  transition: all 0.5s ease;
+}
+
+.bayan-item input[type="radio"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.bayan-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 img {
-  width: 80%;
+  width: 0%;
   height: auto;
+  transition: all 0.5s ease;
+}
+
+.bayan-item input[type="radio"]:checked ~ .bayan-content img,
+.bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-content img {
+  width: 80%;
+  margin: 1rem 0;
+  transition: all 0.5s ease;
+}
+
+.bayan-item input[type="radio"]:checked ~ .bayan-header .bayan-indicator,
+.bayan-item:hover input[type="radio"]:not(:checked) ~ .bayan-header .bayan-indicator {
+  transform: rotate(225deg);
+  transition: all 0.5s ease;
 }
